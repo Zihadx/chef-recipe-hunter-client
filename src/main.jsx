@@ -6,25 +6,24 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import Main from './Componets/Main.jsx';
-import Contact from './Componets/Contact.jsx';
-
+import Main from './Componets/Main.jsx'
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main />,
     // errorElement: <ErrorPage />,
     children: [
-      {
-        path: "contacts/:contactId",
-        element: <Contact />,
-      },
+      // {
+      //   path: "/data",
+      //   element: <Contact />,
+      //   loader: () => fetch('http://localhost:5000/data')
+      // },
     ],
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+   <RouterProvider router={router}></RouterProvider>
   </React.StrictMode>,
 )
