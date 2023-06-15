@@ -1,13 +1,36 @@
-import React from "react";
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
+import React, { useState } from "react";
+import { useRef } from "react";
 
 const Blogs = () => {
+  const contentRef = useRef(null);
+
+  const handleDownloadPDF = () => {
+    const input = contentRef.current;
+
+    html2canvas(input).then((canvas) => {
+      const imgData = canvas.toDataURL("image/png");
+      const pdf = new jsPDF();
+      pdf.addImage(imgData, "PNG", 0, 0);
+      pdf.save("blog.pdf");
+    });
+  };
   return (
     <div>
       <h2 className="text-5xl font-bold text-center mt-16">
-        Answer to the following question
+        Answer to the following question{" "}
+        <span className="text-sm">
+          <button
+            onClick={handleDownloadPDF}
+            className="btn btn-sm btn-ghost border-orange-500"
+          >
+            Download pdf
+          </button>
+        </span>
       </h2>
       <div className="divider"></div>
-      <div>
+      <div ref={contentRef}>
         <h4 className="text-3xl font-semibold mt-16">
           1. Tell us the differences between uncontrolled and controlled
           components?
