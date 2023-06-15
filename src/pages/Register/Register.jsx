@@ -9,6 +9,7 @@ const Register = () => {
     register,
     handleSubmit,
     watch,
+    reset,
     formState: { errors },
   } = useForm();
   const { createUser } = useContext(AuthContext);

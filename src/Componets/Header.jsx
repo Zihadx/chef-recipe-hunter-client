@@ -1,6 +1,14 @@
-import React from "react";
-import { Link, useLoaderData } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import avatar from '../assets/avatar/avatar.png'
+import { AuthContext } from "../pages/Providers/AuthProvider";
 const Header = () => {
+  const {user, logOut} = useContext(AuthContext)
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.log(error));
+  };
   return (
     <div>
       <nav className="py-3 mt-8">
@@ -23,12 +31,31 @@ const Header = () => {
               Recipe
             </Link>
           </div>
-          <div>
-            <Link to="/login">
-              <button className=" bg-slate-500 text-white px-3 py-2 rounded-md font-semibold">
-                Login
-              </button>
-            </Link>
+          <div className="flex justify-end items-center">
+            {user ? (
+              <>
+                <button
+                  onClick={handleLogOut}
+                  className="btn btn-ghost font-bold uppercase"
+                >
+                  Log Out
+                </button>
+              </>
+            ) : (
+              <>
+                <Link to="/login">
+                  <button className="btn btn-ghost font-bold uppercase">
+                    Login
+                  </button>
+                </Link>
+              </>
+            )}
+            <div className="w-12 rounded-full">
+              <img
+                className="rounded-full w-12 h-12"
+                src={user && user.photoURL ? user.photoURL : avatar}
+              />
+            </div>
           </div>
         </div>
       </nav>
