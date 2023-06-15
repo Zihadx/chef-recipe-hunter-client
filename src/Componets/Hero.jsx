@@ -2,7 +2,7 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <div>
+    <div >
       <section className="mt-12">
         <div className="carousel w-full h-48 md:h-[640px]">
           <div id="slide1" className="carousel-item relative w-full">
