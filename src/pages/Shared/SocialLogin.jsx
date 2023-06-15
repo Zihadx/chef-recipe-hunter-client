@@ -11,14 +11,12 @@ const SocialLogin = () => {
   const handleGoogleSignIn = () => {
     googleSignIn().then((result) => {
       const loggedInUser = result.user;
-      console.log(loggedInUser);
       navigate(from, { replace: true });
     });
   };
   const handleGithubSignIn = () => {
     githubSignIn().then((result) => {
       const loggedInUser = result.user;
-      console.log(loggedInUser);
       navigate(from, { replace: true });
     });
   };

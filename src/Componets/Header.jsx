@@ -12,11 +12,11 @@ const Header = () => {
   };
   return (
     <div>
-      <nav className="py-3 mt-8">
+      <nav className="py-3">
         <div className="lg:flex items-center text-center md:justify-between ">
           <div>
             <Link to="/">
-              <h3 className="text-5xl font-bold">
+              <h3 className="text-3xl font-bold">
                 Master <span className="text-orange-500">Chef</span>
               </h3>
             </Link>

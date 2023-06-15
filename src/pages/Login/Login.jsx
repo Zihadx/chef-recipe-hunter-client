@@ -18,10 +18,8 @@ const Login = () => {
     } = useForm();
   
     const onSubmit = (data) => {
-      console.log(data);
       signIn(data.email, data.password).then((result) => {
         const user = result.user;
-        console.log(user);
         Swal.fire({
           position: "top-end",
           icon: "success",
