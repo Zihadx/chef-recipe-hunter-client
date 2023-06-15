@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "react-lazy-load-image-component/src/effects/blur.css";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const ChefCard = ({ chef }) => {
   const {
@@ -12,13 +14,18 @@ const ChefCard = ({ chef }) => {
     rating,
     shortBio,
     recipes,
-    id
+    id,
   } = chef;
   return (
     <div>
       <div className="card bg-base-100 shadow-xl">
         <figure className="px-10 pt-10">
-          <img src={chefPicture} alt="Shoes" className="rounded-xl h-[200px]" />
+          <LazyLoadImage
+            src={chefPicture}
+            alt="Chef"
+            className="rounded-xl h-[200px]"
+            effect="blur"
+          />
         </figure>
         <div className="card-body items-center text-center">
           <h2 className="card-title">{chefName}</h2>
