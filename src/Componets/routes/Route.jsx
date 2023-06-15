@@ -5,8 +5,8 @@ import Blogs from "../../pages/layout/Blogs";
 import Recipes from "../Recipes";
 import Login from "../../pages/Login/Login";
 import Register from "../../pages/Register/Register";
-import PrivateRoute from "./PrivateRoute";
 import ErrorPage from "../../pages/ErrorPage/ErrorPage";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {

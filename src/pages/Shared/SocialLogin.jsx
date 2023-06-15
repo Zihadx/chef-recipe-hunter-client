@@ -4,12 +4,19 @@ import { AuthContext } from "../Providers/AuthProvider";
 const SocialLogin = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const { googleSignIn } = useContext(AuthContext);
+  const { googleSignIn, githubSignIn } = useContext(AuthContext);
 
   const from = location.state?.from?.pathname || "/";
 
   const handleGoogleSignIn = () => {
     googleSignIn().then((result) => {
+      const loggedInUser = result.user;
+      console.log(loggedInUser);
+      navigate(from, { replace: true });
+    });
+  };
+  const handleGithubSignIn = () => {
+    githubSignIn().then((result) => {
       const loggedInUser = result.user;
       console.log(loggedInUser);
       navigate(from, { replace: true });
@@ -30,7 +37,7 @@ const SocialLogin = () => {
           Continue with google
         </button>
         <button
-          //   onClick={handleGoogleSignIn}
+            onClick={handleGithubSignIn}
           className="px-3 py-2 border flex justify-center items-center gap-4 btn btn-ghost bg-slate-100 mb-4"
         >
           <img

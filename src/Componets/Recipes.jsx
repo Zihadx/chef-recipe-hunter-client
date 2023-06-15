@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
+import RecipeCard from "./RecipeCard";
 
 const Recipes = () => {
   const { id } = useParams();
@@ -22,7 +23,7 @@ const Recipes = () => {
   } = details;
   return (
     <div>
-      <div className="bg-slate-100 mx-4 md:mx-24 py-8 px-4 md:px-12 rounded-lg mt-12">
+      <div className="bg-slate-100 py-8 px-4 md:px-12 rounded-lg mt-12">
         <h1 className="text-5xl font-bold text-center">
           Chef Details of <span className="text-orange-500">{chefName}</span>
         </h1>
@@ -35,28 +36,18 @@ const Recipes = () => {
           <p className="mt-4 w-2/3 mx-auto">{shortBio}</p>
           <p className="mt-4">Total Likes: {likes}</p>
         </div>
-          <div className="flex flex-col md:flex-row justify-center items-center gap-6 mt-4">
-            <p>Years of experience: {yearsOfExperience}</p>
-            <p>Quantity: {numberOfRecipes}</p>
-            <p>Rating: {rating}</p>
+        <div className="flex flex-col md:flex-row justify-center items-center gap-6 mt-4">
+          <p>Years of experience: {yearsOfExperience}</p>
+          <p>Quantity: {numberOfRecipes}</p>
+          <p>Rating: {rating}</p>
         </div>
       </div>
 
-
-        
-
-      {/* <div className="card bg-base-100 shadow-xl">
-  <figure><img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
-  <div className="card-body">
-    <h2 className="card-title">{recipes}</h2>
-    <p>If a dog chews shoes whose shoes does he choose?</p>
-    <div className="card-actions justify-end">
-      <button className="btn btn-primary">Buy Now</button>
-    </div>
-  </div>
-</div> */}
-
-
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 mb-12">
+      {recipes && recipes.map((recipe) => (
+        <RecipeCard key={recipe.id }recipe={recipe}> </RecipeCard>
+      ))}
+      </div>
     </div>
   );
 };
