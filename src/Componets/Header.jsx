@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import avatar from '../assets/avatar/avatar.png'
+import avatar from "../assets/avatar/avatar.png";
 import { AuthContext } from "../pages/Providers/AuthProvider";
+import ActiveLink from "./ActiveLink/ActiveLink";
 const Header = () => {
-  const {user, logOut} = useContext(AuthContext)
+  const { user, logOut } = useContext(AuthContext);
   const handleLogOut = () => {
     logOut()
       .then(() => {})
@@ -21,15 +22,14 @@ const Header = () => {
             </Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 lg:text-center">
-            <Link to="/" className="text-lg px-3 hover:text-orange-400">
-              Home
-            </Link>
-            <Link to="/blogs" className="text-lg px-3 hover:text-orange-400">
-              Blog
-            </Link>
-            <Link to="/recipe" className="text-lg px-3 hover:text-orange-400">
-              Recipe
-            </Link>
+            <p className="text-lg px-3 font-semibold mr-4">
+              <ActiveLink to="/" >
+                Home
+              </ActiveLink>
+            </p>
+            <p className="text-lg px-3 font-semibold ml-4">
+              <ActiveLink to="/blogs">Blog</ActiveLink>
+            </p>
           </div>
           <div className="flex justify-end items-center">
             {user ? (
