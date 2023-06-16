@@ -26,7 +26,7 @@ const Hero = () => {
             </div>
 
             <img
-              src="/public/image1.jpg"
+              src="../assets/hero/image1.jpg"
               className="w-full rounded-md mx-h-[640px] object-cover"
             />
             <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
@@ -59,7 +59,7 @@ const Hero = () => {
             </div>
 
             <img
-              src="/public/image2.jpg"
+              src="../assets/hero/image2.jpg"
               className="w-full rounded-md mx-h-[640px] object-cover"
             />
             <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
@@ -92,7 +92,7 @@ const Hero = () => {
             </div>
 
             <img
-              src="/public/image3.jpg"
+              src="../assets/hero/image3.jpg"
               className="w-full rounded-md mx-h-[640px] object-cover"
             />
             <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
@@ -125,7 +125,7 @@ const Hero = () => {
             </div>
 
             <img
-              src="/public/image4.jpg"
+              src="../assets/hero/image4.jpg"
               className="w-full rounded-md mx-h-[640px] object-cover"
             />
             <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">

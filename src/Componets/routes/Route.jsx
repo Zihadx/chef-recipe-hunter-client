@@ -29,7 +29,7 @@ const router = createBrowserRouter([
             <Recipes></Recipes>
           </PrivateRoute>
         ),
-        loader: () => fetch(`http://localhost:5000/data`),
+        loader: () => fetch(`https://assignment-10-server-side-kohl.vercel.app/data`),
       },
       {
         path: "/login",
