@@ -1,4 +1,8 @@
 import React from "react";
+import img1 from '../assets/hero/image1.jpg'
+import img2 from '../assets/hero/image2.jpg'
+import img3 from '../assets/hero/image3.jpg'
+import img4 from '../assets/hero/image4.jpg'
 
 const Hero = () => {
   return (
@@ -26,7 +30,7 @@ const Hero = () => {
             </div>
 
             <img
-              src="../assets/hero/image1.jpg"
+              src={img1}
               className="w-full rounded-md mx-h-[640px] object-cover"
             />
             <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
@@ -59,7 +63,7 @@ const Hero = () => {
             </div>
 
             <img
-              src="../assets/hero/image2.jpg"
+              src={img2}
               className="w-full rounded-md mx-h-[640px] object-cover"
             />
             <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
@@ -92,7 +96,7 @@ const Hero = () => {
             </div>
 
             <img
-              src="../assets/hero/image3.jpg"
+              src={img3}
               className="w-full rounded-md mx-h-[640px] object-cover"
             />
             <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
@@ -125,7 +129,7 @@ const Hero = () => {
             </div>
 
             <img
-              src="../assets/hero/image4.jpg"
+              src={img4}
               className="w-full rounded-md mx-h-[640px] object-cover"
             />
             <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
